@@ -40,7 +40,7 @@
   display: flex;
   position: fixed;
   bottom: 0;
-  left: 50%; /* Center horizontally */
+  left: 63%; /* Center horizontally */
   transform: translateX(-50%); /* Center horizontally */
   box-sizing: border-box;
   justify-content: space-between;
