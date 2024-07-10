@@ -1,169 +1,202 @@
 .chat-bar-collapsible {
-    position: fixed;
-    bottom: 0;
-    right: 35%;
-    box-shadow: 8px 16px  #0003;
-  }
-  
-  .collapsible {
-    background-color: #5297ff;
-    color: white;
-    cursor: pointer;
-    padding: 18px;
-    width: 500px;
-    text-align: center;
-    outline: none;
-    font-size: 18px;
-    border-radius: 10px, 10px,;
-    border: 1px solid white;
-    border-bottom: none;
-  }
-  
-  .full-chat-block {
-    width: 500px;
-    background: #cfcfcf;
-    text-align: center;
-    overflow: auto;
-    scrollbar-width: none;
-    height: max-content;
-    transition: max-height 0.2s ease-out;
-  }
-  
-  .outer-container {
-    min-height: 550px;
-    bottom: none;
-    position: relative;
-  }
-  
-  .chat-container {
-    max-height: 600px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    scroll-behavior: smooth;
-    hyphens: auto;
-  }
-  
-  .chat-container::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .chat-bar-input-block {
-    display: flex;
-    float: left;
-    box-sizing: border-box;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-    background-color: #c0c0c0;
-    border-radius: 10px 10px;
-    padding: 10px 10px 10px;
-  }
-  
-  .chat-bar-icons {
-    display: flex;
-    justify-content: space-evenly;
-    box-sizing: border-box;
-    width: 20%;
-    float: right;
-    font-size: 20px;
-  }
-  
-  #chat-icon:hover {
-    opacity: 0.7;
-  }
-  
-  /* Chat bubbles */
-  
-  #userInput {
-    width: 80%;
-  }
-  
-  .input-box {
-    float: left;
-    border: none;
-    box-sizing: border-box;
-    width: 100%;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 16px;
-    color: #000;
-    background-color: #fff;
-    outline: none;
-  }
-  
-  .userText {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: normal;
-    text-align: right;
-    clear: both;
-  }
-  
-  .userText span {
-    line-height: 1.5em;
-    display: inline-block;
-    background: #4b9efd;
-    padding: 10px;
-    border-radius: 8px;
-    border-bottom-right-radius: 2px;
-    max-width: 80%;
-    margin-right: 10px;
-    animation: floatup 0.5s forwards;
-  }
-  
-  .botText {
-    color: #000;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: normal;
-    font-size: 16px;
-    text-align: left;
-  }
-  
-  .botText span {
-    line-height: 1.5em;
-    display: inline-block;
-    background: #aeaeae;
-    padding: 10px;
-    border-radius: 8px;
-    border-bottom-left-radius: 2px;
-    max-width: 80%;
-    margin-left: 10px;
-    animation: floatup 0.5s forwards;
-  }
-  
-  @keyframes floatup {
-    from {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  box-shadow: 8px 16px #0003;
+}
+
+.full-chat-block {
+  width: 100%;
+  background: #808080;
+  text-align: center;
+  overflow: auto;
+  scrollbar-width: none;
+  height: calc(100vh - 70px); /* Adjust height to account for the fixed input bar */
+  transition: max-height 0.2s ease-out;
+}
+
+.outer-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.chat-container {
+  max-height: 100vh;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  scroll-behavior: smooth;
+  hyphens: auto;
+  padding-bottom: 70px; /* Add padding to the bottom to account for the fixed input bar */
+}
+
+.chat-container::-webkit-scrollbar {
+  display: none;
+}
+
+.chat-bar-input-block {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  box-sizing: border-box;
+  justify-content: space-between;
+  width: 50%;
+  align-items: center;
+  background-color: #c0c0c0;
+  border-radius: 0 0 10px 10px;
+  padding: 10px;
+  box-shadow: 0 -2px 5px #0000001a;
+}
+
+.chat-bar-icons {
+  display: flex;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  width: 20%;
+  float: right;
+  font-size: 20px;
+}
+
+#chat-icon:hover {
+  opacity: 0.7;
+}
+
+/* Chat bubbles */
+
+#userInput {
+  width: 70%; /* Adjust to 70% for better alignment */
+}
+
+.input-box {
+  float: left;
+  border: none;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  color: #aeaeae;
+  background-color: #fff;
+  outline: none;
+}
+
+.userText {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: right;
+  clear: both;
+}
+
+.userText span {
+  line-height: 1.5em;
+  display: inline-block;
+  background: #4b9efd;
+  padding: 10px;
+  border-radius: 8px;
+  border-bottom-right-radius: 2px;
+  max-width: 80%;
+  margin-right: 10px;
+  animation: floatup 0.5s forwards;
+}
+
+.botText {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  text-align: left;
+}
+
+.botText span {
+  line-height: 1.5em;
+  display: inline-block;
+  background: #aeaeae;
+  padding: 10px;
+  border-radius: 8px;
+  border-bottom-left-radius: 2px;
+  max-width: 80%;
+  margin-left: 10px;
+  animation: floatup 0.5s forwards;
+}
+
+@keyframes floatup {
+  from {
       transform: translateY(14px);
       opacity: 0;
-    }
-  
-    to {
-      transform: translateY(none);
-      opacity: 1;
-    }
   }
-  
-  @media screen and (max-width: 600px) {
-    .full-chat-block {
-      width: 100%;
-      border-radius: none;
-    }
-  
-    .chat-bar-collapsible {
+
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  width: 30%;
+  height: 100vh;
+  background-color: #333;
+  color: white;
+  overflow: auto;
+  padding: 20px;
+  box-shadow: 8px 0 16px -8px #0003;
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.sidebar p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  color: #5297ff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  .chat-bar-collapsible {
       position: fixed;
       bottom: 0;
       right: 0;
       width: 100%;
-    }
-  
-    .collapsible {
+  }
+
+  .collapsible {
       width: 100%;
       border: none;
       border-top: 3px solid white;
-      border-radius: auto;
-    }
+      border-radius: 0;
   }
-  
+
+  .outer-container {
+      flex-direction: column;
+  }
+
+  .sidebar {
+      width: 100%;
+      height: auto;
+  }
+
+  .chat-bar-input-block {
+      width: 100%;
+  }
+
+  .chat-container {
+      padding-bottom: 80px; /* Ensure padding is adjusted for mobile */
+  }
+}
