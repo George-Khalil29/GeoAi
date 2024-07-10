@@ -25,28 +25,41 @@
     <div class="chat-container">
       <div class="full-chat-block">
         <!-- Message Container -->
-        <div id="chatbox">
-          <h5 id="chat-timestamp"></h5>
-          <p id="botStarterMessage" class="bot-bubble"><span>Loading...</span></p>
+        <div class="outer-container">
+          <div class="chat-container">
+          <!-- Messages -->
+          <div id="chatbox">
+            <h5 id="chat-timestamp"></h5>
+            <p id="botStarterMessage" class="bot-bubble "><span>Loading...</span></p>
+          </div>
+          <!-- User input box -->
+          <div class="chat-bar-input-block">
+            <div id="userInput">
+              <input id="textInput" class="input-box" type="text" name="msg"
+              placeholder="Massage ChatBot">
+              <p></p>
+            </div>
+            <div class="chat-bar-icons">
+              <i id="chat-icon2" style="color: #333;" class="fa fa-fw fa-send"
+              onclick="sendButton()"></i>
+            </div>
+          </div>
+          <div id="chat-bar-bottom">
+            <div id="temperature"></div>
+            <div id="description"></div>
+            <p id="weather-description"></p>
+            <p></p>
+          </div>
         </div>
+        </div> <!-- Added closing div tag -->
       </div>
-      <!-- User input box -->
-      <div class="chat-bar-input-block">
-        <div id="userInput">
-          <input id="textInput" class="input-box" type="text" name="msg" placeholder="Message ChatBot">
-        </div>
-        <div class="chat-bar-icons">
-          <i id="chat-icon2" style="color: #333;" class="fa fa-fw fa-send" onclick="sendButton()"></i>
-        </div>
-      </div>
+     </div>
     </div>
-  </div>
-
-  <!-- JavaScript -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="./js/script.js"></script>
-  <script src="./js/sw.js"></script>
-  <script src="./js/chat.js"></script>
-  <script src="./js/responses.js"></script>
+    <!-- This is JAVASCRIPT Codes -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/sw.js"></script>
+    <script src="./js/chat.js"></script>
+    <script src="./js/responses.js"></script>
 </body>
 </html>
