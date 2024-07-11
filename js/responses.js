@@ -4,25 +4,6 @@
 // Created on: May 2024
 // This file contains the JS functions for index.html
 
-// Function to fetch weather data from OpenWeatherMap API
-async function getWeather(city) {
-  const apiKey = 'fe1d80e1e103cff8c6afd190cad23fa5'; // Replace with your actual API key
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-  try {
-      const response = await fetch(apiUrl);
-      if (!response.ok) {
-          throw new Error('Weather data not available.');
-      }
-      const data = await response.json();
-      const description = data.weather[0].description;
-      const temperature = data.main.temp;
-      return `Current weather in ${city}: ${description}, Temperature: ${temperature}°C`;
-  } catch (error) {
-      console.error('Error fetching weather:', error.message);
-      return 'Sorry, I could not retrieve the weather information.';
-  }
-}
 
 // Function to handle user input and generate bot responses
 async function getBotResponse(input) {
