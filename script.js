@@ -244,18 +244,14 @@ themeToggleButton.addEventListener('click', () => {
     themeToggleButton.querySelector("i").className = newIconClass;
 });
 
-// Clear all chat history
+// Clear all chat history directly without confirmation
 clearChatButton.addEventListener('click', () => {
-    if (confirm("Are you sure you want to delete all chat history?")) {
-        localStorage.removeItem("saved-api-chats");
-
-        // Reload chat history to reflect changes
-        loadSavedChatHistory();
-
-        currentUserMessage = null;
-        isGeneratingResponse = false;
-    }
+    localStorage.removeItem("saved-api-chats");
+    loadSavedChatHistory();
+    currentUserMessage = null;
+    isGeneratingResponse = false;
 });
+
 
 // Handle click on suggestion items
 suggestionItems.forEach(suggestion => {
